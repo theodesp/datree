@@ -16,6 +16,17 @@
 	<img alt="npm package version" src="https://img.shields.io/npm/v/create-typescript-app?color=21bb42" />
 </p>
 
+This library provides an implementation of Double Array Tree (DATree) in TypeScript. This
+is a radix tree implemented using two arrays to store the transition diagram
+instead of pointers/nodes. It is slower for insertions that the graph implementation
+but is blazingly fast for retrieval.
+
+A very good discription is at
+
+http://linux.thai.net/~thep/datrie/datrie.html
+
+from Theppitak Karoonboonyanan, who also provides libdatrie, a C implementation of the same.
+
 ## Usage
 
 ```shell
@@ -23,9 +34,38 @@ npm i datree
 ```
 
 ```ts
-import { greet } from "datree";
+import { Datree } from "datree";
 
-greet("Hello, world! 💖");
+// Construct the Trie
+const trie = new Datree();
+const strings = ["and", "ant", "do", "geek", "dad", "ball"];
+
+// Index strings
+for (let s in strings) {
+	trie.insert(s);
+	// Alternative method
+	//trie.add(s);
+}
+
+const searches = ["do", "geek", "bat"];
+// Perform searches
+
+for (let i = 0; i < searches.length; i += 1) {
+	const result = trie.search(searches[i]);
+	// Alternative method
+	// const result = trie.containsIndex(searches[i]);
+	// There was a match. Print match info
+	if (result) {
+		switch (result.matchType) {
+			case PERFECT_MATCH:
+			case PURE_PREFIX:
+			case PREFIX:
+				console.log(`${searches[i]}: Present in trie`);
+		}
+	}
+	// result not found
+	console.log(`${searches[i]}: Not Present in trie`);
+}
 ```
 
 ## Contributors
