@@ -1,6 +1,6 @@
 <h1 align="center">Datree</h1>
 
-<p align="center">A very lovely package. Hooray!</p>
+<p align="center">A Double-array trie structure</p>
 
 <p align="center">
 	<!-- prettier-ignore-start -->

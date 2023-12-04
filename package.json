@@ -1,7 +1,7 @@
 {
 	"name": "datree",
-	"version": "0.0.0",
-	"description": "A very lovely package. Hooray!",
+	"version": "0.0.1",
+	"description": "A Double-array trie structure",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/theodesp/datree"
