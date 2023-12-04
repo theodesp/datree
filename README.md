@@ -57,9 +57,9 @@ for (let i = 0; i < searches.length; i += 1) {
 	// There was a match. Print match info
 	if (result) {
 		switch (result.matchType) {
-			case PERFECT_MATCH:
-			case PURE_PREFIX:
-			case PREFIX:
+			case "PERFECT_MATCH":
+			case "PURE_PREFIX":
+			case "PREFIX":
 				console.log(`${searches[i]}: Present in trie`);
 		}
 	}
