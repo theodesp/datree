@@ -44,4 +44,26 @@ export class DoubleArrayTrie {
 	getCheck(pos: number) {
 		return this.da.check[pos];
 	}
+
+	/**
+	 * Sets the value of the base array at <tt>position</tt> to
+	 * value <tt>value</tt>.
+	 *
+	 * @param pos The index in the base array whose value is to be set
+	 * @param value The value to set
+	 */
+	private setBase(pos: number, value: number) {
+		this.da.base[pos] = value;
+	}
+
+	/**
+	 * Sets the value of the check array at <tt>position</tt> to
+	 * value <tt>value</tt>.
+	 *
+	 * @param pos The index in the check array whose value is to be set
+	 * @param value The value to set
+	 */
+	private setCheck(pos: number, value: number) {
+		this.da.check[pos] = value;
+	}
 }
