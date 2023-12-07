@@ -53,7 +53,7 @@ const searches = ["do", "geek", "bat"];
 for (let i = 0; i < searches.length; i += 1) {
 	const result = trie.search(searches[i]);
 	// Alternative method
-	// const result = trie.containsIndex(searches[i]);
+	// const result = trie.containsPrefix(searches[i]);
 	// There was a match. Print match info
 	if (result) {
 		switch (result.matchType) {

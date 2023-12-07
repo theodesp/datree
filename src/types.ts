@@ -33,6 +33,8 @@ export type SearchResult = PERFECT_MATCH | PURE_PREFIX | PREFIX | undefined;
 export const INITIAL_ROOT_BASE = 1;
 // The unoccupied spot value
 export const EMPTY_VALUE = -1;
+// The value that represents a leaf
+export const LEAF_BASE_VALUE = -2;
 // The root check value
 export const ROOT_CHECK_VALUE = -3;
 
@@ -55,21 +57,13 @@ export type Trie = {
 /**
  * @brief TrieState structure
  */
-type TrieState = {
-	/**
-	 * The corresponding trie
-	 */
-	trie: Trie;
+export type TrieState = {
 	/**
 	 * Index in double-array/tail structures
 	 */
 	index: number;
 	/**
-	 * Suffix character offset, if in suffix
+	 * Suffix character current offset, if in suffix
 	 */
-	suffix_idx: number;
-	/**
-	 * Whether it is currently in suffix part
-	 */
-	is_suffix: boolean;
+	current: number;
 };
